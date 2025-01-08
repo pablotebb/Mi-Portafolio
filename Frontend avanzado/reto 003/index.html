@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bushido - El Camino del Samurái</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>El Camino del Samurái: Bushido</h1>
+      <!-- barra navegación -->
+      <nav>
+        <button id="menu-toggle">☰</button>
+        <ul id="menu">
+          <li><a href="#rectitud">Rectitud</a></li>
+          <li><a href="#valor">Valor</a></li>
+          <li><a href="#compasion">Compasión</a></li>
+          <li><a href="#respeto">Respeto</a></li>
+          <li><a href="#sinceridad">Sinceridad</a></li>
+          <li><a href="#honor">Honor</a></li>
+          <li><a href="#lealtad">Lealtad</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CUERPO -->
+    <main>
+      <section id="rectitud">
+        <h2>Rectitud (義, Gi)</h2>
+        <img src="img/rectitud.png" alt="Rectitud" />
+        <p>
+          La rectitud es la capacidad de tomar decisiones justas y actuar con
+          integridad.
+        </p>
+      </section>
+      <!-- Repetir para los demás principios -->
+      <section id="valor">
+        <h2>Valor (勇, Yu)</h2>
+        <img src="img/valor.png" alt="Valor" />
+        <p>
+          El valor no es la ausencia de miedo, sino la fuerza para enfrentarlo y
+          actuar con determinación, incluso en los momentos más difíciles.
+        </p>
+      </section>
+      <section id="compasion">
+        <h2>Compasión (仁, Jin)</h2>
+        <img src="img/compasion.png" alt="Compasion" />
+        <p>
+          La compasión es la virtud de entender el sufrimiento ajeno y tender
+          una mano amiga, cultivando la bondad y la empatía en cada acción.
+        </p>
+      </section>
+      <section id="respeto">
+        <h2>Respeto (礼, Rei)</h2>
+        <img src="img/respeto.png" alt="Respeto" />
+        <p>
+          El respeto es el fundamento de las relaciones humanas, honrando a los
+          demás y reconociendo su dignidad, sin importar su posición o
+          condición.
+        </p>
+      </section>
+      <section id="sinceridad">
+        <h2>Sinceridad (誠, Makoto)</h2>
+        <img src="img/sinceridad.png" alt="Sinceridad" />
+        <p>
+          La sinceridad es vivir con autenticidad, siendo fiel a uno mismo y a
+          los demás, sin máscaras ni engaños.
+        </p>
+      </section>
+      <section id="honor">
+        <h2>Honor (名誉, Meiyo)</h2>
+        <img src="img/honor.png" alt="Honor" />
+        <p>
+          El honor es la brújula moral que guía nuestras acciones, manteniendo
+          la integridad y la dignidad incluso en las circunstancias más
+          adversas.
+        </p>
+      </section>
+      <section id="lealtad">
+        <h2>Lealtad (忠義, Chu)</h2>
+        <img src="img/lealtad.png" alt="Lealtad" />
+        <p>
+          La lealtad es el compromiso inquebrantable con aquellos a quienes
+          servimos, defendiendo sus intereses y valores por encima de todo.
+        </p>
+      </section>
+    </main>
+
+    <!-- PIE -->
+    <footer>
+      <p>&copy; 2025 Takeshi Akira. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- javascript -->
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("menu");
+          menu.style.display =
+            menu.style.display === "block" ? "none" : "block";
+        });
+    </script>
+  </body>
+</html>
