@@ -922,7 +922,7 @@ main {
   position: relative;
 }
 
-.modal[id|="my_photo"]:target, .modal[id|="texto_carrousel"]:target, .modal[id|="texto_carrousel_2"]:target, .modal[id|="texto_carrousel_3"]:target, .modal[id|="texto_carrousel_5"]:target, .modal[id|="texto_carrousel_6"]:target, .modal[id|="texto_carrousel_7"]:target, .modal[id|="texto_carrousel_10"]:target {
+.modal[id|="my_photo"]:target, .modal[id|="texto_carrousel"]:target, .modal[id|="texto_carrousel_2"]:target, .modal[id|="texto_carrousel_3"]:target, .modal[id|="texto_carrousel_5"]:target, .modal[id|="texto_carrousel_6"]:target, .modal[id|="texto_carrousel_7"]:target, .modal[id|="texto_carrousel_8"]:target, .modal[id|="texto_carrousel_9"]:target, .modal[id|="texto_carrousel_10"]:target {
   opacity: 1;
   pointer-events: auto;
 }
