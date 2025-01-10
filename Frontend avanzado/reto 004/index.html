@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Define el tipo de documento como HTML5 -->
+<html lang="es">
+  <!-- Especifica el idioma de la página (español) -->
+  <head>
+    <!-- Encabezado del documento: contiene metadatos y enlaces a recursos externos -->
+    <meta charset="UTF-8" />
+    <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configura la vista para dispositivos móviles (escala inicial y ancho del viewport) -->
+    <title>Galería de Imágenes</title>
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Enlace al archivo CSS externo para estilos -->
+  </head>
+  <body>
+    <!-- Cuerpo del documento: contenido visible de la página -->
+    <header>
+      <!-- Encabezado de la página -->
+      <h1>Galeria de Imágenes</h1>
+      <!-- Título principal de la página -->
+    </header>
+    <article>
+      <!-- Contenido principal de la página -->
+      <div class="gallery">
+        <!-- Contenedor de la galería de imágenes -->
+        <img
+          src="img/image1.webp"
+          alt="Imagen 1"
+          class="gallery-image"
+          loading="lazy"
+        />
+        <!-- Imagen 1: usa formato WebP, tiene texto alternativo y carga diferida (lazy loading) -->
+        <img
+          src="img/image2.webp"
+          alt="Imagen 2"
+          class="gallery-image"
+          loading="lazy"
+        />
+        <!-- Imagen 2: misma estructura que la anterior -->
+        <img
+          src="img/image3.webp"
+          alt="Imagen 3"
+          class="gallery-image"
+          loading="lazy"
+        />
+        <!-- Imagen 3: misma estructura que las anteriores -->
+        <!-- Agrega más imágenes según sea necesario -->
+      </div>
+
+      <!-- Modal: ventana emergente para mostrar imágenes en tamaño completo -->
+      <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <!-- Botón para cerrar el modal (representado por una "X") -->
+        <span class="prev">&#10094;</span>
+        <!-- Botón para navegar a la imagen anterior (flecha izquierda) -->
+        <span class="next">&#10095;</span>
+        <!-- Botón para navegar a la imagen siguiente (flecha derecha) -->
+        <img class="modal-content" id="modal-img" />
+        <!-- Contenedor de la imagen que se muestra en el modal -->
+      </div>
+    </article>
+
+    <footer>
+      <!-- Pie de página -->
+      <script src="js/script.js"></script>
+      <!-- Enlace al archivo JavaScript externo para la funcionalidad de la galería -->
+    </footer>
+  </body>
+</html>
