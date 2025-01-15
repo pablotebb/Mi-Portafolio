@@ -1,0 +1,119 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+  background-color: black;
+  /* Fondo negro para la página */
+  color: white;
+  /* Texto en color blanco */
+  font-family: Arial, sans-serif;
+  /* Fuente Arial o una fuente sans-serif como respaldo */
+  margin: 0;
+  /* Elimina el margen predeterminado del body */
+  padding: 0;
+  /* Elimina el padding predeterminado del body */
+  display: flex;
+  /* Usa Flexbox para alinear el contenido */
+  flex-direction: column;
+  /* Organiza los elementos en una columna */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: center;
+  /* Centra los elementos verticalmente */
+  height: 100vh;
+  /* Altura del body igual al 100% del viewport */
+}
+
+/* Estilos para la cabecera */
+header {
+  text-align: center;
+  /* Centra el texto dentro del header */
+  margin-bottom: 20px;
+  /* Espacio inferior de 20px */
+}
+
+header h1 {
+  font-size: 2.5em;
+  /* Tamaño de fuente grande para el título */
+  margin: 0;
+  /* Elimina el margen predeterminado del h1 */
+}
+
+header p {
+  font-size: 1.2em;
+  /* Tamaño de fuente mediano para el párrafo */
+  margin: 10px 0 0;
+  /* Margen superior de 10px y 0 en los demás lados */
+}
+
+/* Estilos para el formulario */
+article {
+  background-color: #333;
+  /* Fondo gris oscuro para el artículo */
+  padding: 20px;
+  /* Espaciado interno de 20px */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  width: 100%;
+  /* Ancho del 100% del contenedor padre */
+  max-width: 400px;
+  /* Ancho máximo de 400px */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  /* Sombra sutil alrededor del artículo */
+}
+
+form {
+  display: flex;
+  /* Usa Flexbox para organizar los elementos del formulario */
+  flex-direction: column;
+  /* Organiza los elementos en una columna */
+}
+
+label {
+  margin-bottom: 5px;
+  /* Espacio inferior de 5px para las etiquetas */
+  font-weight: bold;
+  /* Texto en negrita para las etiquetas */
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  /* Espacio inferior de 15px para los campos de entrada */
+  padding: 10px;
+  /* Espaciado interno de 10px */
+  border: 1px solid #555;
+  /* Borde gris oscuro */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  background-color: #444;
+  /* Fondo gris oscuro para los campos de entrada */
+  color: white;
+  /* Texto en color blanco */
+}
+
+input::placeholder, textarea::placeholder {
+  color: #bbb;
+  /* Color gris claro para el texto de placeholder */
+}
+
+button {
+  padding: 10px;
+  /* Espaciado interno de 10px */
+  background-color: silver;
+  /* Fondo plateado para el botón */
+  color: black;
+  /* Texto en color negro */
+  border: none;
+  /* Sin borde */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Cambia el cursor a una mano al pasar sobre el botón */
+  font-weight: bold;
+  /* Texto en negrita */
+}
+
+button:hover {
+  background-color: #a8a8a8;
+  /* Cambia el color de fondo al pasar el mouse */
+}
