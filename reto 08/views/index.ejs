@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>CRUD App</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Añadir Elemento</h1>
+        <form action="/add" method="POST">
+          <label for="url">URL:</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            placeholder="Ingrese la URL"
+            required
+          />
+
+          <label for="description">Descripción:</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Ingrese la descripción"
+            required
+          />
+
+          <button type="submit">Añadir</button>
+        </form>
+
+        <h2>Elementos Añadidos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>URL</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (elements.length > 0) { %> <% for (let i = 0; i <
+            elements.length; i++) { %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><%= elements[i].url %></td>
+              <td><%= elements[i].description %></td>
+              <td>
+                <!-- Botón para Eliminar -->
+                <form
+                  action="/delete/<%= elements[i]._id %>"
+                  method="POST"
+                  style="display: inline"
+                >
+                  <button type="submit">Eliminar</button>
+                </form>
+                <!-- Botón para Modificar -->
+                <button
+                  onclick="openEditModal('<%= elements[i]._id %>', '<%= elements[i].url %>', '<%= elements[i].description %>')"
+                >
+                  Modificar
+                </button>
+              </td>
+            </tr>
+            <% } %> <% } else { %>
+            <tr>
+              <td colspan="4">No hay elementos añadidos</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </header>
+
+    <article>
+      <!-- Modal para Editar -->
+      <div id="editModal" style="display: none">
+        <div class="modal-content">
+          <h2>Modificar Elemento</h2>
+          <form id="editForm" action="/update" method="POST">
+            <input type="hidden" id="editId" name="id" />
+
+            <label for="editUrl">URL:</label>
+            <input type="text" id="editUrl" name="url" required />
+
+            <label for="editDescription">Descripción:</label>
+            <input
+              type="text"
+              id="editDescription"
+              name="description"
+              required
+            />
+
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" onclick="closeEditModal()">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <script>
+        // Función para abrir el modal de edición
+        function openEditModal(id, url, description) {
+          document.getElementById("editId").value = id;
+          document.getElementById("editUrl").value = url;
+          document.getElementById("editDescription").value = description;
+          document.getElementById("editModal").style.display = "block";
+        }
+
+        // Función para cerrar el modal de edición
+        function closeEditModal() {
+          document.getElementById("editModal").style.display = "none";
+        }
+      </script>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editar artículo</title>
+    <!-- Se enlaza el archivo CSS de Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Editar artículo</h1>
+      <!-- Encabezado de la página -->
+      <!-- Formulario para editar el artículo -->
+      <form method="post">
+        {% csrf_token %}
+        <!-- Token CSRF para proteger el formulario contra ataques CSRF -->
+        {{ form.as_p }}
+        <!-- Renderiza el formulario utilizando el método as_p, que muestra los campos del formulario uno debajo del otro -->
+        <!-- Botón para enviar el formulario -->
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <!-- Enlace para cancelar y volver a la página de inicio -->
+        <a href="{% url 'index' %}" class="btn btn-secondary">Cancelar</a>
+      </form>
+    </div>
+  </body>
+</html>

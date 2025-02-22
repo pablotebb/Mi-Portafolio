@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Meteorológico</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #007bff;
+            color: white;
+        }
+        .login-btn {
+            background: white;
+            color: #007bff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .form-section, .list-section {
+            width: 48%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+        }
+        .list-container {
+            margin-top: 20px;
+        }
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .edit-btn {
+            background: #ffc107;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro Meteorológico</h1>
+        <button class="login-btn">Login</button>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Formulario</h2>
+            <form id="weather-form">
+                <input type="text" placeholder="Temperatura" name="temperatura" required>
+                <input type="text" placeholder="Humedad" name="humedad" required>
+                <input type="text" placeholder="Presión atmosférica" name="presion" required>
+                <input type="text" placeholder="Viento" name="viento" required>
+                <input type="text" placeholder="Precipitación" name="precipitacion" required>
+                <input type="text" placeholder="Radiación solar" name="radiacion" required>
+                <input type="text" placeholder="Índices de calidad del aire" name="calidad_aire" required>
+                <input type="text" placeholder="Nubosidad" name="nubosidad" required>
+                <input type="text" placeholder="Índices UV" name="uv" required>
+                <button type="submit" class="submit-btn">Aceptar</button>
+            </form>
+        </section>
+        <section class="list-section">
+            <h2>Lista</h2>
+            <div class="list-container">
+                <div class="list-item">
+                    <input type="checkbox">
+                    <span>Temperatura: 25°C | Humedad: 60% | Presión: 1013 hPa</span>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Borrar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

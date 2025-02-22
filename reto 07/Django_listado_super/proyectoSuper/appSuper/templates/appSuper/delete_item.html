@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Borrar artículo</title>
+    <!-- Se enlaza el archivo CSS de Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Borrar artículo</h1>
+      <!-- Encabezado de la página -->
+      <!-- Mensaje de confirmación del borrado del artículo -->
+      <p>Estás seguro que quieres borrar "{{ item.s_name }}"?</p>
+      <!-- Formulario para confirmar el borrado del artículo -->
+      <form method="post">
+        {% csrf_token %}
+        <!-- Token CSRF para proteger el formulario contra ataques CSRF -->
+        <!-- Botón para enviar el formulario y borrar el artículo -->
+        <button type="submit" class="btn btn-danger">Borrar</button>
+        <!-- Enlace para cancelar y volver a la página de inicio -->
+        <a href="{% url 'index' %}" class="btn btn-secondary">Cancelar</a>
+      </form>
+    </div>
+  </body>
+</html>

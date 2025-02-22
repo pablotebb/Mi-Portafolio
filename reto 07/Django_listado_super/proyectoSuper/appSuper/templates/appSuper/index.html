@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista compra</title>
+    <!-- Importa el estilo de Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Estilo CSS personalizado -->
+    <style>
+      .checked {
+        text-decoration: line-through; /* Aplica una línea sobre el texto para los elementos marcados */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h1>Lista compra</h1>
+      <br />
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Formulario</h2>
+          <!-- Formulario para agregar un nuevo elemento -->
+          <form method="post">
+            {% csrf_token %}
+            <!-- Token CSRF para proteger el formulario contra ataques CSRF -->
+            <div class="form-group">{{ form.s_name }}</div>
+            <!-- Campo para el nombre del ítem -->
+            <div class="form-group">{{ form.d_price }}</div>
+            <!-- Campo para el precio del ítem -->
+            <div class="form-group">{{ form.i_quantity }}</div>
+            <!-- Campo para la cantidad del ítem -->
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+            <!-- Botón para enviar el formulario -->
+          </form>
+        </div>
+        <div class="col-md-8">
+          <h2>Lista</h2>
+          <!-- Lista de elementos -->
+          <ul class="list-group">
+            {% for item in items %}
+            <!-- Si el elemento está marcado, aplica la clase CSS 'checked' -->
+            <li
+              class="list-group-item {% if item.b_checked %}checked{% endif %}"
+            >
+              <!-- Formulario para cambiar el estado de verificación del elemento -->
+              <form method="post" action="{% url 'toggle_check' item.pk %}">
+                {% csrf_token %}
+                <!-- Token CSRF -->
+                <!-- Checkbox para marcar o desmarcar el elemento -->
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  onclick="this.form.submit();"
+                  {%
+                  if
+                  item.b_checked
+                  %}checked{%
+                  endif
+                  %}
+                />
+                Nombre: {{ item.s_name }} | Precio: ${{ item.d_price }} |
+                Cantidad: {{ item.i_quantity }}
+              </form>
+              <!-- Botones para editar y borrar el elemento -->
+              <span class="float-right">
+                <a
+                  href="{% url 'edit_item' item.pk %}"
+                  class="btn btn-secondary btn-sm"
+                  >Editar</a
+                >
+                <a
+                  href="{% url 'delete_item' item.pk %}"
+                  class="btn btn-danger btn-sm"
+                  >Borrar</a
+                >
+              </span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
